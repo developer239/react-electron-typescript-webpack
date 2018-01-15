@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { createWindow } from '../_shared/helpers';
+import { createWindow } from '../_shared/windowHelper';
 
 
 const Container = styled.div`

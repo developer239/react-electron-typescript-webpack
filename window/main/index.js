@@ -1,5 +1,5 @@
 import { app } from 'electron';
-import { createWindow } from '../_shared/helpers';
+import { createWindow } from '../_shared/windowHelper';
 
 
 let mainWindow = null;
