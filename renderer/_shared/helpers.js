@@ -1,9 +1,12 @@
-import { BrowserWindow } from 'electron';
+import electron from 'electron';
+
+
+const { remote: { BrowserWindow } } = electron;
 
 
 const property = (obj, key) => obj && obj.hasOwnProperty(key) ? obj[key] : false;
 
-export const createWindow = (createdWindow) => (options) => {
+export const createWindow = (createdWindow) => (name, options) => {
   createdWindow = new BrowserWindow({
     show: false,
     width: property(options, 'width') || 800,
@@ -13,7 +16,7 @@ export const createWindow = (createdWindow) => (options) => {
   });
 
   createdWindow.setResizable(true);
-  createdWindow.loadURL('file://' + __dirname + '/../renderer/main/index.html');
+  createdWindow.loadURL('file://' + __dirname + `/../../renderer/${name}/index.html`);
 
   createdWindow.once('ready-to-show', () => {
     createdWindow.show();

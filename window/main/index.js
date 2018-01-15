@@ -1,10 +1,10 @@
 import { app } from 'electron';
-import { createWindow } from '../helpers';
+import { createWindow } from '../_shared/helpers';
 
 
 let mainWindow = null;
 
-const createMainWindow = () => createWindow(mainWindow)();
+const createMainWindow = () => createWindow(mainWindow)('main');
 
 
 app.on('ready', createMainWindow);
