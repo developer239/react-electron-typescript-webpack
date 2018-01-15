@@ -7,14 +7,14 @@
     "start": "electron -r babel-register ./index.js"
   },
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.3.13",
-    "babel-register": "^6.3.13",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "babel-preset-env": "^2.0.0-beta.2",
+    "babel-preset-react": "^7.0.0-beta.37",
+    "babel-register": "^7.0.0-beta.37",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
-    "electron": "^1.4.3"
+    "electron": "^1.8.2-beta.2"
   }
 }
