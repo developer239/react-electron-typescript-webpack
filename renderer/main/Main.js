@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { createWindow } from '../_shared/windowHelper';
+import { send } from '../_shared/messageHelper';
 
 
 const Container = styled.div`
@@ -10,10 +10,7 @@ const Container = styled.div`
 
 export default class Main extends Component {
   handleButtonClick() {
-    createWindow(null)('counter', {
-      width: 200,
-      height: 200,
-    });
+    send('open-settings-window');
   };
 
   render() {

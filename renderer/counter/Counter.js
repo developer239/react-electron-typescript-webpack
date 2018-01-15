@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import { send } from '../_shared/messageHelper';
+
 
 const Container = styled.div`
   padding: 20px 20px
@@ -12,12 +14,16 @@ const Button = styled.button`
 `;
 
 export default class Main extends Component {
+  handleButtonClick(type) {
+    send(type);
+  };
+
   render() {
     return (
       <Container>
-        <Button>Increment</Button>
+        <Button onClick={() => this.handleButtonClick('increment')}>Increment</Button>
         <br />
-        <Button>Decrement</Button>
+        <Button onClick={() => this.handleButtonClick('decrement')}>Decrement</Button>
       </Container>
     );
   }
