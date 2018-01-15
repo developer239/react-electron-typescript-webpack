@@ -1,10 +1,15 @@
-import { createWindow } from '../_shared/windowHelper';
+import { createWindow, generateWindowObject } from '../_shared/windowHelper';
 import { listenTo } from '../_shared/messageHelper';
 
 
-let counterWindow = null;
+// We need to keep reference to this object
+const counterWindow = generateWindowObject();
 
 const createMainWindow = () => createWindow(counterWindow)('counter');
 
-
-listenTo('open-settings-window', createMainWindow);
+// Create counter window on `Open Counter` button click
+listenTo('open-settings-window', () => {
+  if (!counterWindow.isOpen) {
+    createMainWindow();
+  }
+});

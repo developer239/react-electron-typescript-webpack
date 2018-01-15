@@ -3,8 +3,13 @@ import { BrowserWindow } from 'electron';
 
 const property = (obj, key) => obj && obj.hasOwnProperty(key) ? obj[key] : false;
 
-export const createWindow = (createdWindow) => (name, options) => {
-  createdWindow = new BrowserWindow({
+export const generateWindowObject = () => ({
+  isOpen: false,
+  window: null,
+});
+
+export const createWindow = (windowReference) => (name, options) => {
+  const newWindow = new BrowserWindow({
     show: false,
     width: property(options, 'width') || 800,
     height: property(options, 'height') || 800,
@@ -12,14 +17,17 @@ export const createWindow = (createdWindow) => (name, options) => {
     resizable: property(options, 'resizable') || true,
   });
 
-  createdWindow.setResizable(true);
-  createdWindow.loadURL('file://' + __dirname + `/../../renderer/${name}/index.html`);
+  newWindow.setResizable(true);
+  newWindow.loadURL('file://' + __dirname + `/../../renderer/${name}/index.html`);
+  newWindow.once('ready-to-show', newWindow.show);
 
-  createdWindow.once('ready-to-show', () => {
-    createdWindow.show();
+  // Handle close window
+  newWindow.on('closed', () => {
+    windowReference.isOpen = false;
+    windowReference.window = null;
   });
 
-  createdWindow.on('closed', () => {
-    createdWindow = null;
-  });
+  // Handle open window
+  windowReference.isOpen = true;
+  windowReference.window = newWindow;
 };
