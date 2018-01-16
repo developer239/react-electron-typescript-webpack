@@ -14,14 +14,38 @@ const Button = styled.button`
 `;
 
 export default class Main extends Component {
-  handleButtonClick = (type) => () => send(type)
+  constructor() {
+    super();
+
+    this.state = {
+      value: 0,
+    };
+  }
+
+  handleButtonClick = (type) => () => send(type);
+
+  handleSetDirectly = () => {
+    send('counter-set-value', this.state.value);
+    this.setState({ value: 0 });
+  };
+
+  handleInputChange = (event) => this.setState({ value: event.target.value });
 
   render() {
+    const value = this.state.value;
+
     return (
       <Container>
-        <Button onClick={this.handleButtonClick('increment')}>Increment</Button>
+        <Button onClick={this.handleButtonClick('counter-increment')}>Increment</Button>
         <br />
-        <Button onClick={this.handleButtonClick('decrement')}>Decrement</Button>
+        <Button onClick={this.handleButtonClick('counter-decrement')}>Decrement</Button>
+        <label>Set Directly: </label>
+        <input
+          type="number"
+          value={value}
+          onChange={this.handleInputChange}
+        /> <br />
+        <Button onClick={this.handleSetDirectly}>Save</Button>
       </Container>
     );
   }

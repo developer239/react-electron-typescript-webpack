@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { send } from '../_shared/messageHelper';
+import { send, listenTo } from '../_shared/messageHelper';
 
 
 const Container = styled.div`
@@ -9,15 +9,41 @@ const Container = styled.div`
 `;
 
 export default class Main extends Component {
-  handleButtonClick = () => send('open-settings-window');
+  constructor() {
+    super();
+
+    this.state = {
+      counterValue: 0,
+    };
+
+    listenTo('counter-increment', () => {
+      this.updateCounterValue(this.state.counterValue += 1)
+    });
+
+    listenTo('counter-decrement', () => {
+      this.updateCounterValue(this.state.counterValue -= 1)
+    });
+
+    listenTo('counter-set-value', (event, args) => {
+      this.updateCounterValue(args.payload)
+    });
+  }
+
+  updateCounterValue = (counterValue) => {
+    this.setState({ counterValue });
+  };
+
+  handleButtonClick = () => send('open-counter-window');
 
   render() {
+    const counterValue = this.state.counterValue;
+
     return (
       <Container>
-        <h1>Hello World!</h1>
+        <h1>Electron app</h1>
         <p>From minimal electron, es6, react application.</p>
         <h2>Counter</h2>
-        <label>Current value: </label>value <br />
+        <label>Current value: </label>{counterValue}<br />
         <button onClick={this.handleButtonClick}>Open Counter</button>
       </Container>
     );

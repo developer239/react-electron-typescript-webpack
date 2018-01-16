@@ -8,7 +8,7 @@ const counterWindow = generateWindowObject();
 const createMainWindow = () => createWindow(counterWindow)('counter');
 
 // Create counter window on `Open Counter` button click
-listenTo('open-settings-window', () => {
+listenTo('open-counter-window', () => {
   if (!counterWindow.isOpen) {
     createMainWindow();
   }
