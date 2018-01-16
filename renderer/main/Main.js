@@ -9,9 +9,7 @@ const Container = styled.div`
 `;
 
 export default class Main extends Component {
-  handleButtonClick() {
-    send('open-settings-window');
-  };
+  handleButtonClick = () => send('open-settings-window');
 
   render() {
     return (

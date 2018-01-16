@@ -14,16 +14,14 @@ const Button = styled.button`
 `;
 
 export default class Main extends Component {
-  handleButtonClick(type) {
-    send(type);
-  };
+  handleButtonClick = (type) => () => send(type)
 
   render() {
     return (
       <Container>
-        <Button onClick={() => this.handleButtonClick('increment')}>Increment</Button>
+        <Button onClick={this.handleButtonClick('increment')}>Increment</Button>
         <br />
-        <Button onClick={() => this.handleButtonClick('decrement')}>Decrement</Button>
+        <Button onClick={this.handleButtonClick('decrement')}>Decrement</Button>
       </Container>
     );
   }
