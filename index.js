@@ -1,7 +1,7 @@
 import { app } from 'electron';
 
-import './window/main/index';
-import './window/counter/index';
+import './main/main/index';
+import './main/counter/index';
 
 
 app.on('window-all-closed', () => {
