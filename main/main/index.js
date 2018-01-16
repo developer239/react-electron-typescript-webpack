@@ -6,7 +6,10 @@ import { listenTo, send } from '../_shared/messageHelper';
 // We need to keep reference to this object
 const mainWindow = generateWindowObject();
 
-const createMainWindow = () => createWindow(mainWindow)('main');
+const createMainWindow = () => createWindow(mainWindow)('main', {
+  x: 0,
+  y: 0,
+});
 
 // Handle increment counter
 listenTo('counter-increment', () => {
