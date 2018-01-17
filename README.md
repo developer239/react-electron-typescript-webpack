@@ -37,7 +37,7 @@ __Native environment__:
 - `./main/counter` Has all code needed for _counter_ application process.
 - `./main/_shared` Code that is shared between _native_ application processes.
 
-__Native environment__:
+__Renderer environment__:
 
 - `./main` Has all views for _renderer_.
 - `./main/main` Main _view_ folder.
