@@ -4,7 +4,9 @@ Simple electron application with ES6 react implementation.
 
 __Uses:__
 
+* [Electron](https://github.com/electron/electron) 1.8.2
 * [React](https://github.com/facebook/react) 16.2.0
+* [React DOM](https://github.com/facebook/react/tree/master/packages/react-dom) 16.2.0
 * [Styled Components](https://github.com/styled-components/styled-components) 2.4.0
 
 #### Installing the project
@@ -37,7 +39,7 @@ __Native environment__:
 
 __Native environment__:
 
-- `./main` Has all views for _render_.
+- `./main` Has all views for _renderer_.
 - `./main/main` Main _view_ folder.
 - `./main/counter` Counter _view_ folder.
 - `./main/_shared` Code shared between views.
