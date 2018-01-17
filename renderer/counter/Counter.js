@@ -1,17 +1,10 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
-
 import { send } from '../_shared/messageHelper'
+import Container from '../_shared/components/Container'
+import Content from '../_shared/components/Content'
+import Button from '../_shared/components/Button'
+import Input from '../_shared/components/Input'
 
-
-const Container = styled.div`
-  padding: 20px 20px
-`
-
-const Button = styled.button`
-  width: 100%;
-  margin: 10px 0;
-`
 
 export default class Counter extends Component {
   constructor() {
@@ -29,23 +22,30 @@ export default class Counter extends Component {
     this.setState({ value: 0 })
   }
 
-  handleInputChange = event => this.setState({ value: event.target.value })
+  handleInputChange = event => this.setState({ value: parseInt(event.target.value, 10) })
+
+  handleClearValue= () => {
+    send('counter-set-value', 0)
+    this.setState({ value: 0 })
+  }
 
   render() {
     const value = this.state.value
 
     return (
       <Container>
-        <Button onClick={this.handleButtonClick('counter-increment')}>Increment</Button>
-        <br />
-        <Button onClick={this.handleButtonClick('counter-decrement')}>Decrement</Button>
-        <label>Set Directly: </label>
-        <input
-          type="number"
-          value={value}
-          onChange={this.handleInputChange}
-        /> <br />
-        <Button onClick={this.handleSetDirectly}>Save</Button>
+        <Content>
+          <Button onClick={this.handleButtonClick('counter-increment')}>Increment</Button>
+          <Button onClick={this.handleButtonClick('counter-decrement')}>Decrement</Button>
+          <Button onClick={this.handleClearValue}>Clear</Button>
+          Set Directly:
+          <Input
+            type="number"
+            value={value}
+            onChange={this.handleInputChange}
+          /> <br />
+          <Button onClick={this.handleSetDirectly}>Save</Button>
+        </Content>
       </Container>
     )
   }

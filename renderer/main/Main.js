@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
-
 import { send, listenTo } from '../_shared/messageHelper'
+import Button from '../_shared/components/Button'
+import Container from '../_shared/components/Container'
+import Content from '../_shared/components/Content'
+import Header from '../_shared/components/Header'
+import SubHeader from '../_shared/components/SubHeader'
+import Text from '../_shared/components/Text'
+import Value from '../_shared/components/Value'
 
-
-const Container = styled.div`
-  padding: 0 20px;
-`
 
 export default class Main extends Component {
   constructor() {
@@ -40,11 +41,16 @@ export default class Main extends Component {
 
     return (
       <Container>
-        <h1>Electron app</h1>
-        <p>From minimal electron, es6, react application.</p>
-        <h2>Counter</h2>
-        <label>Current value: </label>{counterValue}<br />
-        <button onClick={this.handleButtonClick}>Open Counter</button>
+        <Header>Electron App</Header>
+        <Content>
+          <Text>Lorem ipsum dolor sit amet, nonumes convenire iracundia no sit, in possit audire cum, in duo mundi
+            tantas dolorum. Graeco splendide mei ut. An his doming eirmod disputando, eum tritani meliore ne. Populo
+            consequuntur nec cu, eos an accusata neglegentur interpretaris, enim ullamcorper deterruisset eu ius. Nec
+            omnium dignissim mediocritatem ut. Possit aliquip deleniti vis ut, ut sea dicat augue adversarium.</Text>
+          <SubHeader>Counter</SubHeader>
+          Current value <Value>{counterValue}</Value><br />
+          <Button onClick={this.handleButtonClick}>Open Counter</Button>
+        </Content>
       </Container>
     )
   }

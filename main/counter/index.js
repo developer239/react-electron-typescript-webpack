@@ -6,10 +6,11 @@ import { listenTo } from '../_shared/messageHelper'
 const counterWindow = generateWindowObject()
 
 const createMainWindow = () => createWindow(counterWindow)('counter', {
-  x: 600,
+  x: 450,
   y: 0,
   width: 300,
-  height: 400,
+  height: 350,
+  resizable: false,
 })
 
 // Create counter window on `Open Counter` button click

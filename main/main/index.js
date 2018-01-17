@@ -9,6 +9,8 @@ const mainWindow = generateWindowObject()
 const createMainWindow = () => createWindow(mainWindow)('main', {
   x: 0,
   y: 0,
+  height: 620,
+  width: 450,
 })
 
 // Handle increment counter
