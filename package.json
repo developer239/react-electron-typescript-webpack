@@ -8,6 +8,7 @@
     "lint": "eslint ./renderer --fix && eslint ./main --fix"
   },
   "dependencies": {
+    "electron": "^1.8.2-beta.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "styled-components": "^2.4.0"
@@ -20,7 +21,6 @@
     "babel-preset-env": "^2.0.0-beta.2",
     "babel-preset-react": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
-    "electron": "^1.8.2-beta.2",
     "eslint": "^4.13.1"
   }
 }
