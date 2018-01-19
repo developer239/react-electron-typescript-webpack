@@ -1,3 +1,4 @@
+import { OPEN_COUNTER_WINDOW } from '../../_shared/constants'
 import { createWindow, generateWindowObject } from '../_shared/windowHelper'
 import { listenTo } from '../_shared/messageHelper'
 
@@ -14,7 +15,7 @@ const createMainWindow = () => createWindow(counterWindow)('counter', {
 })
 
 // Create counter window on `Open Counter` button click
-listenTo('open-counter-window', () => {
+listenTo(OPEN_COUNTER_WINDOW, () => {
   if (!counterWindow.isOpen) {
     createMainWindow()
   }

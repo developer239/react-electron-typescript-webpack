@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { COUNTER_INCREMENT, COUNTER_DECREMENT, COUNTER_SET_VALUE } from '../../_shared/constants'
 import { send } from '../_shared/messageHelper'
 import Container from '../_shared/components/Container'
 import Content from '../_shared/components/Content'
@@ -18,14 +19,14 @@ export default class Counter extends Component {
   handleButtonClick = type => () => send(type)
 
   handleSetDirectly = () => {
-    send('counter-set-value', this.state.value)
+    send(COUNTER_SET_VALUE, this.state.value)
     this.setState({ value: 0 })
   }
 
   handleInputChange = event => this.setState({ value: parseInt(event.target.value, 10) })
 
-  handleClearValue= () => {
-    send('counter-set-value', 0)
+  handleClearValue = () => {
+    send(COUNTER_SET_VALUE, 0)
     this.setState({ value: 0 })
   }
 
@@ -35,8 +36,8 @@ export default class Counter extends Component {
     return (
       <Container>
         <Content>
-          <Button onClick={this.handleButtonClick('counter-increment')}>Increment</Button>
-          <Button onClick={this.handleButtonClick('counter-decrement')}>Decrement</Button>
+          <Button onClick={this.handleButtonClick(COUNTER_INCREMENT)}>Increment</Button>
+          <Button onClick={this.handleButtonClick(COUNTER_DECREMENT)}>Decrement</Button>
           <Button onClick={this.handleClearValue}>Clear</Button>
           Set Directly:
           <Input

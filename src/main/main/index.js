@@ -1,4 +1,5 @@
 import { app } from 'electron'
+import { COUNTER_INCREMENT, COUNTER_DECREMENT, COUNTER_SET_VALUE } from '../../_shared/constants'
 import { createWindow, generateWindowObject } from '../_shared/windowHelper'
 import { listenTo, send } from '../_shared/messageHelper'
 import createTouchBar from '../_shared/touchBarHelper'
@@ -23,18 +24,18 @@ const createMainWindow = () => createWindow(mainWindow)(
 )
 
 // Handle increment counter
-listenTo('counter-increment', () => {
-  send(mainWindow)('counter-increment')
+listenTo(COUNTER_INCREMENT, () => {
+  send(mainWindow)(COUNTER_INCREMENT)
 })
 
 // Handle decrement counter
-listenTo('counter-decrement', () => {
-  send(mainWindow)('counter-decrement')
+listenTo(COUNTER_DECREMENT, () => {
+  send(mainWindow)(COUNTER_DECREMENT)
 })
 
 // Handle set counter value
-listenTo('counter-set-value', (event, args) => {
-  send(mainWindow)('counter-set-value', args.payload)
+listenTo(COUNTER_SET_VALUE, (event, args) => {
+  send(mainWindow)(COUNTER_SET_VALUE, args.payload)
 })
 
 // Create main window when application is ready

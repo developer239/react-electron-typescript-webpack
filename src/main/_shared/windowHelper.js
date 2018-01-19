@@ -21,7 +21,7 @@ export const createWindow = windowReference => (name, options, special) => {
   newWindow.loadURL(`file://${__dirname}/../../renderer/${name}/index.html`)
   newWindow.once('ready-to-show', newWindow.show)
 
-  if (special.touchBar) {
+  if (special && special.touchBar) {
     newWindow.setTouchBar(special.touchBar)
   }
 

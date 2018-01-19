@@ -11,15 +11,20 @@ __Uses:__
 
 #### Installing the project
 
-Run
- ```yarn install```
-
 ![2](https://github.com/developer239/electron-react/blob/master/previewTouchbar.png?raw=true)
 ![1](https://github.com/developer239/electron-react/blob/master/preview.gif?raw=true)
- 
+
+I recommend using [yarn](https://github.com/yarnpkg/yarn) as package manager.
+
+ ```
+$ yarn install
+```
+
 #### Development
- 
- I did not implement webpack or any other package solution so hot reloading is not available.
+
+```bash
+$ yarn start
+```
  
  If you change code in the `./renderer` folder then you can reload the page using `⌘Cmd + R.`
  
@@ -27,20 +32,20 @@ Run
  
 #### Structure
 
-Code structure is little bit unconventional.
-
-Basically, there are these sections:
+Basically, there are two sections:
 
 __Native environment__:
 
-- `./main` Has all _native_ code in one folder.
-- `./main/main` Has all code needed for _main_ application process.
-- `./main/counter` Has all code needed for _counter_ application process.
-- `./main/_shared` Code that is shared between _native_ application processes.
+- `./src/main` Has all _native_ code in one folder.
+- `./src/main/main` Has all code needed for _main_ application process.
+- `./src/main/counter` Has all code needed for _counter_ application process.
+- `./src/main/_shared` Code that is shared between _native_ application processes.
 
 __Renderer environment__:
 
-- `./main` Has all views for _renderer_.
-- `./main/main` Main _view_ folder.
-- `./main/counter` Counter _view_ folder.
-- `./main/_shared` Code shared between views.
+- `./src/main` Has all views for _renderer_.
+- `./src/main/main` Main _view_ folder.
+- `./src/main/counter` Counter _view_ folder.
+- `./src/main/_shared` Code shared between views.
+
+Code that is shared between renderer and native environment lives in `./src/_shared`.

@@ -4,7 +4,7 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron -r babel-register ./index.js",
+    "start": "electron -r babel-register ./src/index.js",
     "lint": "eslint ./renderer --fix && eslint ./main --fix"
   },
   "dependencies": {
