@@ -1,6 +1,6 @@
 # Electron React
 
-Simple electron application with ES6 react implementation.
+Simple electron, react, es6 application. With touch bar implementation. 🎉
 
 __Uses:__
 
@@ -13,7 +13,8 @@ __Uses:__
 
 Run
  ```yarn install```
- 
+
+![2](https://github.com/developer239/electron-react/blob/master/previewTouchbar.png?raw=true)
 ![1](https://github.com/developer239/electron-react/blob/master/preview.gif?raw=true)
  
 #### Development

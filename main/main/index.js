@@ -1,17 +1,26 @@
 import { app } from 'electron'
 import { createWindow, generateWindowObject } from '../_shared/windowHelper'
 import { listenTo, send } from '../_shared/messageHelper'
+import createTouchBar from '../_shared/touchBarHelper'
 
 
 // We need to keep reference to this object
 const mainWindow = generateWindowObject()
 
-const createMainWindow = () => createWindow(mainWindow)('main', {
-  x: 0,
-  y: 0,
-  height: 620,
-  width: 450,
-})
+const touchBar = createTouchBar(mainWindow)
+
+const createMainWindow = () => createWindow(mainWindow)(
+  'main',
+  {
+    x: 0,
+    y: 0,
+    height: 620,
+    width: 450,
+  },
+  {
+    touchBar,
+  },
+)
 
 // Handle increment counter
 listenTo('counter-increment', () => {

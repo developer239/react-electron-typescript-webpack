@@ -8,7 +8,7 @@ export const generateWindowObject = () => ({
   window: null,
 })
 
-export const createWindow = windowReference => (name, options) => {
+export const createWindow = windowReference => (name, options, special) => {
   const newWindow = new BrowserWindow({
     ...options,
     show: false,
@@ -20,6 +20,10 @@ export const createWindow = windowReference => (name, options) => {
   newWindow.setResizable(true)
   newWindow.loadURL(`file://${__dirname}/../../renderer/${name}/index.html`)
   newWindow.once('ready-to-show', newWindow.show)
+
+  if (special.touchBar) {
+    newWindow.setTouchBar(special.touchBar)
+  }
 
   // Handle close window
   newWindow.on('closed', () => {
