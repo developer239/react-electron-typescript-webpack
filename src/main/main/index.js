@@ -1,16 +1,16 @@
-import { app } from 'electron'
-import { COUNTER_INCREMENT, COUNTER_DECREMENT, COUNTER_SET_VALUE } from '../../_shared/constants'
-import { createWindow, generateWindowObject } from '../_shared/windowHelper'
-import { listenTo, send } from '../_shared/messageHelper'
-import createTouchBar from '../_shared/touchBarHelper'
+const app = require('electron').app
+const constants = require('../../_shared/constants')
+const windowHelper = require('../_shared/windowHelper')
+const messageHelper = require('../_shared/messageHelper')
+const createTouchBar = require('../_shared/touchBarHelper')
 
 
 // We need to keep reference to this object
-const mainWindow = generateWindowObject()
+const mainWindow = windowHelper.generateWindowObject()
 
 const touchBar = createTouchBar(mainWindow)
 
-const createMainWindow = () => createWindow(mainWindow)(
+const createMainWindow = () => windowHelper.createWindow(mainWindow)(
   'main',
   {
     x: 0,
@@ -24,18 +24,18 @@ const createMainWindow = () => createWindow(mainWindow)(
 )
 
 // Handle increment counter
-listenTo(COUNTER_INCREMENT, () => {
-  send(mainWindow)(COUNTER_INCREMENT)
+messageHelper.listenTo(constants.COUNTER_INCREMENT, () => {
+  messageHelper.send(mainWindow)(constants.COUNTER_INCREMENT)
 })
 
 // Handle decrement counter
-listenTo(COUNTER_DECREMENT, () => {
-  send(mainWindow)(COUNTER_DECREMENT)
+messageHelper.listenTo(constants.COUNTER_DECREMENT, () => {
+  messageHelper.send(mainWindow)(constants.COUNTER_DECREMENT)
 })
 
 // Handle set counter value
-listenTo(COUNTER_SET_VALUE, (event, args) => {
-  send(mainWindow)(COUNTER_SET_VALUE, args.payload)
+messageHelper.listenTo(constants.COUNTER_SET_VALUE, (event, args) => {
+  messageHelper.send(mainWindow)(constants.COUNTER_SET_VALUE, args.payload)
 })
 
 // Create main window when application is ready

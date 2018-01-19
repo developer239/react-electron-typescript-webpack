@@ -1,14 +1,14 @@
-import { BrowserWindow } from 'electron'
+const BrowserWindow = require('electron').BrowserWindow
 
 
 const property = (obj, key) => obj && obj.hasOwnProperty(key) ? obj[key] : false
 
-export const generateWindowObject = () => ({
+const generateWindowObject = () => ({
   isOpen: false,
   window: null,
 })
 
-export const createWindow = windowReference => (name, options, special) => {
+const createWindow = windowReference => (name, options, special) => {
   const newWindow = new BrowserWindow({
     ...options,
     show: false,
@@ -34,4 +34,9 @@ export const createWindow = windowReference => (name, options, special) => {
   // Handle open window
   windowReference.isOpen = true
   windowReference.window = newWindow
+}
+
+module.exports = {
+  generateWindowObject,
+  createWindow,
 }

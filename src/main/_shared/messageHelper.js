@@ -1,13 +1,17 @@
-import { ipcMain } from 'electron'
+const ipcMain = require('electron').ipcMain
 
 
-export const listenTo = (name, callback) => ipcMain.on(name, callback)
+const listenTo = (name, callback) => ipcMain.on(name, callback)
 
-// Chooses whether to use webContents or sender
-export const send = event => (name, payload) => {
+const send = event => (name, payload) => {
   if (event.window) {
     event.window.webContents.send(name, { payload })
   } else {
     event.sender.send(name, { payload })
   }
+}
+
+module.exports = {
+  listenTo,
+  send,
 }

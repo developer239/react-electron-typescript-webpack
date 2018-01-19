@@ -1,24 +1,24 @@
-import { TouchBar } from 'electron'
-import { send } from './messageHelper'
-import { COUNTER_INCREMENT, COUNTER_DECREMENT, COUNTER_SET_VALUE } from '../../_shared/constants'
+const TouchBar = require('electron').TouchBar
+const messageHelper = require('./messageHelper')
+const constants = require('../../_shared/constants')
 
 
-const { TouchBarButton } = TouchBar
+const TouchBarButton = TouchBar.TouchBarButton
 
 const createTouchBar = browserWindow => {
   const incrementButton = new TouchBarButton({
     label: '🔼 increment',
-    click: () => send(browserWindow)(COUNTER_INCREMENT),
+    click: () => messageHelper.send(browserWindow)(constants.COUNTER_INCREMENT),
   })
 
   const decrementButton = new TouchBarButton({
     label: '🔽 decrement',
-    click: () => send(browserWindow)(COUNTER_DECREMENT),
+    click: () => messageHelper.send(browserWindow)(constants.COUNTER_DECREMENT),
   })
 
   const clearButton = new TouchBarButton({
     label: '🚮 clear',
-    click: () => send(browserWindow)(COUNTER_SET_VALUE, 0),
+    click: () => messageHelper.send(browserWindow)(constants.COUNTER_SET_VALUE, 0),
   })
 
   return new TouchBar([
@@ -28,4 +28,4 @@ const createTouchBar = browserWindow => {
   ])
 }
 
-export default createTouchBar
+module.exports = createTouchBar

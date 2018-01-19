@@ -1,10 +1,11 @@
-import { app } from 'electron'
-import './main/main/index'
-import './main/counter/index'
+const electron = require('electron')
 
+require('./main/main/index')
 
-app.on('window-all-closed', () => {
+require('./main/counter/index')
+
+electron.app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
-    app.quit()
+    electron.app.quit()
   }
 })

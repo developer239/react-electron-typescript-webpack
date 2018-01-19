@@ -1,5 +1,12 @@
-export const OPEN_COUNTER_WINDOW = 'open-counter-window'
+const OPEN_COUNTER_WINDOW = 'open-counter-window'
 
-export const COUNTER_INCREMENT = 'counter-increment'
-export const COUNTER_DECREMENT = 'counter-decrement'
-export const COUNTER_SET_VALUE = 'counter-set-value'
+const COUNTER_INCREMENT = 'counter-increment'
+const COUNTER_DECREMENT = 'counter-decrement'
+const COUNTER_SET_VALUE = 'counter-set-value'
+
+module.exports = {
+  OPEN_COUNTER_WINDOW,
+  COUNTER_INCREMENT,
+  COUNTER_DECREMENT,
+  COUNTER_SET_VALUE,
+}
