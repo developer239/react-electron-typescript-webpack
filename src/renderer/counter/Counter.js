@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { COUNTER_INCREMENT, COUNTER_DECREMENT, COUNTER_SET_VALUE } from '../../_shared/constants'
 import { send } from '../_shared/messageHelper'
-import Container from '../_shared/components/Container'
-import Content from '../_shared/components/Content'
-import Button from '../_shared/components/Button'
-import Input from '../_shared/components/Input'
+import {
+  Container,
+  Content,
+  Button,
+  Input,
+} from '../_shared/components'
 
 
 export default class Counter extends Component {
@@ -12,26 +14,26 @@ export default class Counter extends Component {
     super()
 
     this.state = {
-      value: 0,
+      inputValue: 0,
     }
   }
 
   handleButtonClick = type => () => send(type)
 
   handleSetDirectly = () => {
-    send(COUNTER_SET_VALUE, this.state.value)
-    this.setState({ value: 0 })
+    send(COUNTER_SET_VALUE, this.state.inputValue)
+    this.setState({ inputValue: 0 })
   }
 
-  handleInputChange = event => this.setState({ value: parseInt(event.target.value, 10) })
+  handleInputChange = event => this.setState({ inputValue: parseInt(event.target.value, 10) })
 
   handleClearValue = () => {
     send(COUNTER_SET_VALUE, 0)
-    this.setState({ value: 0 })
+    this.setState({ inputValue: 0 })
   }
 
   render() {
-    const value = this.state.value
+    const value = this.state.inputValue
 
     return (
       <Container>

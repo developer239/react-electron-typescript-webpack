@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { send, listenTo } from '../_shared/messageHelper'
-import Button from '../_shared/components/Button'
-import Container from '../_shared/components/Container'
-import Content from '../_shared/components/Content'
-import Header from '../_shared/components/Header'
-import SubHeader from '../_shared/components/SubHeader'
-import Text from '../_shared/components/Text'
-import Value from '../_shared/components/Value'
+import {
+  Button,
+  Container,
+  Content,
+  Header,
+  SubHeader,
+  Text,
+  Value,
+} from '../_shared/components'
 
 
 export default class Main extends Component {

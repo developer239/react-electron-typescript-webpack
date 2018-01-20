@@ -1,7 +1,7 @@
 const electron = require('electron')
 
-require('./main/main/index')
 
+require('./main/main/index')
 require('./main/counter/index')
 
 electron.app.on('window-all-closed', () => {
