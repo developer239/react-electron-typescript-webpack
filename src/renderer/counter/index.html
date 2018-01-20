@@ -12,9 +12,13 @@
 <body>
 <div id="app"></div>
 <script>
-  // Renderer process
-  require('babel-register')
-  require('./render.js')
+  if (process.env.NODE_ENV !== 'production') {
+    // Renderer process
+    require('babel-register')
+    require('./render.js')
+  } else {
+    require('../../../dist/counter.js')
+  }
 </script>
 </body>
 </html>

@@ -4,8 +4,9 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron -r babel-register ./src/index.js",
-    "lint": "eslint ./renderer --fix && eslint ./main --fix"
+    "start": "NODE_ENV=production electron -r babel-register ./src/index.js",
+    "lint": "eslint ./renderer --fix && eslint ./main --fix",
+    "build": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "electron": "^1.8.2-beta.2",
@@ -16,11 +17,13 @@
   "devDependencies": {
     "@strv/eslint-config-javascript": "^7.9.0",
     "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^2.0.0-beta.2",
     "babel-preset-react": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
-    "eslint": "^4.13.1"
+    "eslint": "^4.13.1",
+    "webpack": "^3.10.0"
   }
 }
