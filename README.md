@@ -8,6 +8,7 @@ __Uses:__
 * [React](https://github.com/facebook/react) 16.2.0
 * [React DOM](https://github.com/facebook/react/tree/master/packages/react-dom) 16.2.0
 * [Styled Components](https://github.com/styled-components/styled-components) 2.4.0
+* [Recompose](https://github.com/acdlite/recompose) 0.26.0
 
 #### Installing the project
 
