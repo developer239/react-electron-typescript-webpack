@@ -1,4 +1,6 @@
 const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 
 const DIST_DIR = 'dist'
@@ -13,6 +15,10 @@ const config = {
     filename: '[name].js',
     path: path.resolve(__dirname, DIST_DIR),
   },
+  plugins: [
+    new CleanWebpackPlugin([DIST_DIR]),
+    new UglifyJSPlugin(),
+  ],
   module: {
     rules: [
       {
