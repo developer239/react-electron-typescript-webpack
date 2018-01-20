@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { compose, withState, withHandlers } from 'recompose'
 import { COUNTER_INCREMENT, COUNTER_DECREMENT, COUNTER_SET_VALUE } from '../../_shared/constants'
 import { send } from '../_shared/messageHelper'
 import {
@@ -9,47 +11,57 @@ import {
 } from '../_shared/components'
 
 
-export default class Counter extends Component {
-  constructor() {
-    super()
+const Counter = ({
+  handleIncrement,
+  handleDecrement,
+  handleClearValue,
+  inputValue,
+  handleInputChange,
+  handleSetDirectly,
+}) => (
+  (
+    <Container>
+      <Content>
+        <Button onClick={handleIncrement}>Increment</Button>
+        <Button onClick={handleDecrement}>Decrement</Button>
+        <Button onClick={handleClearValue}>Clear</Button>
+        Set Directly:
+        <Input
+          type="number"
+          value={inputValue}
+          onChange={handleInputChange}
+        /> <br />
+        <Button onClick={handleSetDirectly}>Save</Button>
+      </Content>
+    </Container>
+  )
+)
 
-    this.state = {
-      inputValue: 0,
-    }
-  }
-
-  handleButtonClick = type => () => send(type)
-
-  handleSetDirectly = () => {
-    send(COUNTER_SET_VALUE, this.state.inputValue)
-    this.setState({ inputValue: 0 })
-  }
-
-  handleInputChange = event => this.setState({ inputValue: parseInt(event.target.value, 10) })
-
-  handleClearValue = () => {
-    send(COUNTER_SET_VALUE, 0)
-    this.setState({ inputValue: 0 })
-  }
-
-  render() {
-    const value = this.state.inputValue
-
-    return (
-      <Container>
-        <Content>
-          <Button onClick={this.handleButtonClick(COUNTER_INCREMENT)}>Increment</Button>
-          <Button onClick={this.handleButtonClick(COUNTER_DECREMENT)}>Decrement</Button>
-          <Button onClick={this.handleClearValue}>Clear</Button>
-          Set Directly:
-          <Input
-            type="number"
-            value={value}
-            onChange={this.handleInputChange}
-          /> <br />
-          <Button onClick={this.handleSetDirectly}>Save</Button>
-        </Content>
-      </Container>
-    )
-  }
+Counter.propTypes = {
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
+  handleClearValue: PropTypes.func.isRequired,
+  inputValue: PropTypes.number.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSetDirectly: PropTypes.func.isRequired,
 }
+
+const enhance = compose(
+  withState('inputValue', 'setInputValue', 0),
+  withHandlers({
+    handleIncrement: () => () => send(COUNTER_INCREMENT),
+    handleDecrement: () => () => send(COUNTER_DECREMENT),
+    handleSetDirectly: ({ inputValue, setInputValue }) => () => {
+      send(COUNTER_SET_VALUE, inputValue)
+      setInputValue(0)
+    },
+    handleInputChange: ({ setInputValue }) => event =>
+      setInputValue(parseInt(event.target.value, 10)),
+    handleClearValue: ({ setInputValue }) => () => {
+      send(COUNTER_SET_VALUE, 0)
+      setInputValue(0)
+    },
+  }),
+)
+
+export default enhance(Counter)
