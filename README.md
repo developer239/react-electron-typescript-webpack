@@ -27,6 +27,8 @@ $ yarn package-mac
 ```
  
  You will find final application in `/release-builds/electron-es6-react-darwin-x64`.
+ 
+ There are also prepared commands for building the application for linux `yarn package-linux` and for windows `yarn package-win`.
 
 #### Development
 
