@@ -22,11 +22,19 @@ $ yarn install
 
 #### Building the project
 
+First you have to compile es6 that is used in renderer process.
+
+```bash
+$ yarn build
+```
+
+This will create `main.js` and `counter.js` files in `./dist` folder.  Then you have ro run [electron-packager](https://github.com/electron-userland/electron-packager).
+
 ```bash
 $ yarn package-mac
 ```
  
- You will find final application in `/release-builds/electron-es6-react-darwin-x64`.
+ You will find final application in `/release-builds`.
  
  There are also prepared commands for building the application for linux `yarn package-linux` and for windows `yarn package-win`.
 
