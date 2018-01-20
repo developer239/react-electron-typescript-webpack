@@ -12,7 +12,7 @@
 <body>
 <div id="app"></div>
 <script>
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV === 'develop') {
     // Renderer process
     require('babel-register')
     require('./render.js')

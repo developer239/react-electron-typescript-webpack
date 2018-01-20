@@ -11,7 +11,6 @@ const createMainWindow = () => windowHelper.createWindow(counterWindow)('counter
   y: 0,
   width: 300,
   height: 350,
-  resizable: false,
 })
 
 // Create counter window on `Open Counter` button click

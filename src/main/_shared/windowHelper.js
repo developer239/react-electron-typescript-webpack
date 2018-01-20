@@ -10,11 +10,11 @@ const generateWindowObject = () => ({
 
 const createWindow = windowReference => (name, options, special) => {
   const newWindow = new BrowserWindow({
-    ...options,
     show: false,
     width: property(options, 'width') || 600,
     height: property(options, 'height') || 600,
-    toolbar: property(options, 'toolbar') || false,
+    x: property(options, 'x'),
+    y: property(options, 'y'),
   })
 
   newWindow.setResizable(true)

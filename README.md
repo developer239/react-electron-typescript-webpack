@@ -20,6 +20,14 @@ I recommend using [yarn](https://github.com/yarnpkg/yarn) as package manager.
 $ yarn install
 ```
 
+#### Building the project
+
+```bash
+$ yarn package-mac
+```
+ 
+ You will find final application in `/release-builds/electron-es6-react-darwin-x64`.
+
 #### Development
 
 ```bash

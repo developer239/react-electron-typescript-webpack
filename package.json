@@ -4,9 +4,10 @@
   "main": "main.js",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production electron -r babel-register ./src/index.js",
+    "start": "NODE_ENV=develop electron -r babel-register .",
     "lint": "eslint ./renderer --fix && eslint ./main --fix",
-    "build": "NODE_ENV=production webpack -p"
+    "build": "rm -rf dist && NODE_ENV=production webpack -p",
+    "package-mac": "rm -rf release-builds && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds"
   },
   "dependencies": {
     "electron": "^1.8.2-beta.2",
@@ -23,6 +24,7 @@
     "babel-preset-env": "^2.0.0-beta.2",
     "babel-preset-react": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
+    "electron-packager": "^10.1.1",
     "eslint": "^4.13.1",
     "webpack": "^3.10.0"
   }
