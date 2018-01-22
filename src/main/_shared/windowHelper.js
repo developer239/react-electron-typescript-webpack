@@ -1,7 +1,7 @@
 const BrowserWindow = require('electron').BrowserWindow
 
 
-const property = (obj, key) => obj && obj.hasOwnProperty(key) ? obj[key] : false
+const property = (obj, key) => obj && obj.hasOwnProperty(key) ? obj[key] : undefined
 
 const generateWindowObject = () => ({
   isOpen: false,
