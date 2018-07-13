@@ -42,6 +42,7 @@
     "react",
     "react-dom",
     "recompose",
-    "styled-components"
+    "styled-components",
+    "webpack"
   ]
 }
