@@ -1,21 +1,21 @@
-# Electron React
+# React Electron
 
-Simple electron, react, es6 application. With touch bar implementation. 🎉
-
-__Uses:__
-
-* [Electron](https://github.com/electron/electron) 1.8.2
-* [React](https://github.com/facebook/react) 16.2.0
-* [React DOM](https://github.com/facebook/react/tree/master/packages/react-dom) 16.2.0
-* [Styled Components](https://github.com/styled-components/styled-components) 2.4.0
-* [Recompose](https://github.com/acdlite/recompose) 0.26.0
-
-#### Installing the project
+ Example minimal `electron` application with `react`, `styled-components` and `webpack` for rapid frontend development.
 
 ![2](https://github.com/developer239/electron-react/blob/master/previewTouchbar.png?raw=true)
 ![1](https://github.com/developer239/electron-react/blob/master/preview.gif?raw=true)
 
-I recommend using [yarn](https://github.com/yarnpkg/yarn) as package manager.
+__Uses:__
+
+* [Electron](https://github.com/electron/electron) 2.0.4
+* [React](https://github.com/facebook/react) 16.4.1
+* [React DOM](https://github.com/facebook/react/tree/master/packages/react-dom) 16.4.1
+* [Styled Components](https://github.com/styled-components/styled-components) 3.3.3
+* [Recompose](https://github.com/acdlite/recompose) 0.27.0
+
+#### Installing the project
+
+ I recommend using [yarn](https://github.com/yarnpkg/yarn) as package manager.
 
  ```
 $ yarn install
@@ -23,21 +23,21 @@ $ yarn install
 
 #### Building the project
 
-First you have to compile es6 that is used in renderer process.
+ You have to build static javascript files in `/dist` folder.
 
 ```bash
 $ yarn build
 ```
 
-This will create `main.js` and `counter.js` files in `./dist` folder.  Then you have ro run [electron-packager](https://github.com/electron-userland/electron-packager).
+ Then you can run [electron-packager](https://github.com/electron-userland/electron-packager) and create your application.
 
 ```bash
 $ yarn package-mac
 ```
  
- You will find final application in `/release-builds`.
+ Your application is created in `/release-builds` folder.
  
- There are also prepared commands for building the application for linux `yarn package-linux` and for windows `yarn package-win`.
+ There are also commands for building linux `yarn package-linux` and windows `yarn package-win`.
 
 #### Development
 
@@ -67,4 +67,4 @@ __Renderer environment__:
 - `./src/main/counter` Counter _view_ folder.
 - `./src/main/_shared` Code shared between views.
 
-Code that is shared between renderer and native environment lives in `./src/_shared`.
+ Code that is shared between renderer and native environment lives in `./src/_shared`.
