@@ -5,15 +5,14 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=develop electron -r babel-register .",
-    "lint": "eslint ./renderer --fix && eslint ./main --fix",
+    "lint": "eslint ./src/renderer && eslint ./src/main",
+    "lint:fix": "eslint ./src/renderer --fix && eslint ./src/main --fix",
     "build": "NODE_ENV=production webpack -p",
     "package-mac": "rm -rf release-builds && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
     "package-win": "rm -rf release-builds && electron-packager . electron-react --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron React\"",
     "package-linux": "rm -rf release-builds && electron-packager . electron-react --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/icon.png --prune=true --out=release-builds"
   },
   "dependencies": {
-    "electron": "^2.0.4",
-    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "recompose": "^0.27.1",
@@ -28,11 +27,14 @@
     "babel-preset-env": "^2.0.0-beta.2",
     "babel-preset-react": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
-    "clean-webpack-plugin": "^0.1.17",
+    "clean-webpack-plugin": "^0.1.19",
+    "electron": "2.0.4",
     "electron-packager": "^12.1.0",
     "eslint": "^5.1.0",
-    "uglifyjs-webpack-plugin": "^1.1.6",
-    "webpack": "^3.10.0"
+    "prop-types": "^15.6.2",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.0",
+    "webpack-cli": "^3.0.8"
   },
   "keywords": [
     "electron",

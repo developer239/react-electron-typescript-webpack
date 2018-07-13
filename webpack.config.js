@@ -6,7 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const DIST_DIR = 'dist'
 
 const config = {
-  target: 'electron',
+  target: 'electron-renderer',
   entry: {
     counter: path.resolve(__dirname, 'src', 'renderer', 'counter', 'render.js'),
     main: path.resolve(__dirname, 'src', 'renderer', 'main', 'render.js'),
