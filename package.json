@@ -28,7 +28,7 @@
     "babel-preset-react": "^7.0.0-beta.3",
     "babel-register": "^7.0.0-beta.3",
     "clean-webpack-plugin": "^0.1.19",
-    "electron": "2.0.4",
+    "electron": "2.0.5",
     "electron-packager": "^12.1.0",
     "eslint": "^5.1.0",
     "prop-types": "^15.6.2",

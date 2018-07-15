@@ -7,7 +7,7 @@
 
 __Uses:__
 
-* [Electron](https://github.com/electron/electron) 2.0.4
+* [Electron](https://github.com/electron/electron) 2.0.5
 * [React](https://github.com/facebook/react) 16.4.1
 * [React DOM](https://github.com/facebook/react/tree/master/packages/react-dom) 16.4.1
 * [Styled Components](https://github.com/styled-components/styled-components) 3.3.3
