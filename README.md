@@ -1,7 +1,7 @@
 # React Electron
 
- Example minimal `electron` application with `react`, `styled-components` and `webpack` for rapid frontend development.
-
+ Javascript meets desktop. Electron with your favorite frontend libraries: react, styled-components and recompose. Build process for common operating systems included.
+ 
 ![2](https://github.com/developer239/electron-react/blob/master/previewTouchbar.png?raw=true)
 ![1](https://github.com/developer239/electron-react/blob/master/preview.gif?raw=true)
 
