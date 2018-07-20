@@ -11,7 +11,7 @@ import {
 } from '../_shared/components'
 
 
-const Counter = ({
+export const Counter = ({
   handleIncrement,
   handleDecrement,
   handleClearValue,
@@ -38,12 +38,12 @@ const Counter = ({
 )
 
 Counter.propTypes = {
-  handleIncrement: PropTypes.func.isRequired,
-  handleDecrement: PropTypes.func.isRequired,
-  handleClearValue: PropTypes.func.isRequired,
-  inputValue: PropTypes.number.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
-  handleSetDirectly: PropTypes.func.isRequired,
+  handleIncrement: PropTypes.func,
+  handleDecrement: PropTypes.func,
+  handleClearValue: PropTypes.func,
+  inputValue: PropTypes.number,
+  handleInputChange: PropTypes.func,
+  handleSetDirectly: PropTypes.func,
 }
 
 const enhance = compose(

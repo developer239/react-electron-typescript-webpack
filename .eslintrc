@@ -16,11 +16,13 @@
     "no-inline-comments": 0,
     "import/namespace": 0,
     "arrow-parens": "error",
-    "react/sort-prop-types": 0
+    "react/sort-prop-types": 0,
+    "react/require-default-props": 0
   },
   "globals": {
     "describe": true,
     "it": true,
-    "expect": true
+    "expect": true,
+    "jest": true
   }
 }

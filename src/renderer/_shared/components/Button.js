@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export default styled.button`
+const Button = styled.button`
   text-transform: uppercase;
   transition: all .2s ease-in-out;
   display: block;
@@ -31,3 +31,7 @@ export default styled.button`
     border: none;
   }
 `
+
+Button.displayName = 'Button'
+
+export default Button

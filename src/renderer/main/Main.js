@@ -19,7 +19,7 @@ import {
 } from '../_shared/components'
 
 
-const Main = ({ counterValue, handleButtonClick }) => (
+export const Main = ({ counterValue, handleButtonClick }) => (
   <Container>
     <Header>Electron App</Header>
     <Content>
@@ -35,9 +35,9 @@ const Main = ({ counterValue, handleButtonClick }) => (
 )
 
 Main.propTypes = {
-  counterValue: PropTypes.number.isRequired,
-  handleButtonClick: PropTypes.func.isRequired,
-  setCounterValue: PropTypes.func.isRequired, // eslint-disable-line
+  counterValue: PropTypes.number,
+  handleButtonClick: PropTypes.func,
+  setCounterValue: PropTypes.func, // eslint-disable-line
 }
 
 const enhance = compose(

@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 
-export default styled.span`
+const Span = styled.span`
   font-weight: 500;
 `
+
+Span.displayName = 'Span'
+
+export default Span

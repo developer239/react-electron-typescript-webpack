@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 
-export default styled.input`
+const Input = styled.input`
     box-sizing: border-box;
     display: block;
     background-color: transparent;
@@ -17,3 +17,7 @@ export default styled.input`
     font-family: inherit;
     margin: 10px 0;
 `
+
+Input.displayName = 'Input'
+
+export default Input

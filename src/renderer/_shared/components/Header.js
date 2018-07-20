@@ -26,4 +26,6 @@ Header.propTypes = {
   children: PropTypes.string.isRequired,
 }
 
+Header.displayName = 'Header'
+
 export default Header
