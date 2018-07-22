@@ -1,3 +1,4 @@
+const BrowserWindow = require('./BrowserWindow')
 const TouchBar = require('./TouchBar')
 
 module.exports = {
@@ -5,4 +6,5 @@ module.exports = {
     on: jest.fn(),
   },
   TouchBar,
+  BrowserWindow,
 }

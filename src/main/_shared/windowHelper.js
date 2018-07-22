@@ -13,8 +13,8 @@ const createWindow = windowReference => (name, options, special) => {
     show: false,
     width: property(options, 'width') || 600,
     height: property(options, 'height') || 600,
-    x: property(options, 'x'),
-    y: property(options, 'y'),
+    x: property(options, 'x') || 0,
+    y: property(options, 'y') || 0,
   })
 
   newWindow.setResizable(true)
@@ -34,9 +34,12 @@ const createWindow = windowReference => (name, options, special) => {
   // Handle open window
   windowReference.isOpen = true
   windowReference.window = newWindow
+
+  return newWindow
 }
 
 module.exports = {
+  property,
   generateWindowObject,
   createWindow,
 }
