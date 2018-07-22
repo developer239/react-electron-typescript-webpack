@@ -1,8 +1,4 @@
 {
-  "name": "electron-react",
-  "version": "0.0.0",
-  "main": "main.js",
-  "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=develop electron -r babel-register .",
     "lint:js": "eslint ./src/renderer && eslint ./src/main",
@@ -50,6 +46,13 @@
     "webpack": "^4.16.0",
     "webpack-cli": "^3.0.8"
   },
+  "version": "1.0.0",
+  "license": "MIT",
+  "name": "react-electron",
+  "url": "https://github.com/developer239/react-electron",
+  "author": {
+    "name": "Michal Jarnot"
+  },
   "keywords": [
     "electron",
     "prop-types",
@@ -57,6 +60,11 @@
     "react-dom",
     "recompose",
     "styled-components",
-    "webpack"
+    "webpack",
+    "eslint",
+    "stylelint",
+    "jest",
+    "enzyme",
+    "sinon"
   ]
 }
