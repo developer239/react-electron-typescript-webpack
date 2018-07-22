@@ -4,16 +4,18 @@
 
 #### Main Dependencies
 
-* [Electron](https://github.com/electron/electron) 2.0.5
-* [React](https://github.com/facebook/react) 16.4.1
-* [Styled Components](https://github.com/styled-components/styled-components) 3.3.3
-* [Recompose](https://github.com/acdlite/recompose) 0.27.0
+* [electron](https://github.com/electron/electron) 2.0.5
+* [react](https://github.com/facebook/react) 16.4.1
+* [styled components](https://github.com/styled-components/styled-components) 3.3.3
+* [recompose](https://github.com/acdlite/recompose) 0.27.0
+* [webpack](https://github.com/webpack/webpack) 4.16.1
 
 #### Code Quality Tools
 
 * [eslint](https://github.com/eslint/eslint) 5.1.0
 * [jest](https://github.com/facebook/jest) 23.4.1
 * [enzyme](https://github.com/airbnb/enzyme) 3.3.0
+* [sinon](https://github.com/sinonjs/sinon) 6.1.4
 * [.editorconfig](http://editorconfig.org/)
 
 ## Installation
