@@ -13,6 +13,7 @@
 #### Code Quality Tools
 
 * [eslint](https://github.com/eslint/eslint) 5.1.0
+* [stylelint](https://github.com/stylelint/stylelint) 9.3.0
 * [jest](https://github.com/facebook/jest) 23.4.1
 * [enzyme](https://github.com/airbnb/enzyme) 3.3.0
 * [sinon](https://github.com/sinonjs/sinon) 6.1.4
