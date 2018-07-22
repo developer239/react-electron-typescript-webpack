@@ -1,6 +1,6 @@
 const TouchBar = require('electron').TouchBar
-const messageHelper = require('./messageHelper')
 const constants = require('../../_shared/constants')
+const messageHelper = require('./messageHelper')
 
 
 const TouchBarButton = TouchBar.TouchBarButton

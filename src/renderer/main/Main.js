@@ -26,7 +26,8 @@ export const Main = ({ counterValue, handleButtonClick }) => (
       <Text>Lorem ipsum dolor sit amet, nonumes convenire iracundia no sit, in possit audire cum, in duo mundi
         tantas dolorum. Graeco splendide mei ut. An his doming eirmod disputando, eum tritani meliore ne. Populo
         consequuntur nec cu, eos an accusata neglegentur interpretaris, enim ullamcorper deterruisset eu ius. Nec
-        omnium dignissim mediocritatem ut. Possit aliquip deleniti vis ut, ut sea dicat augue adversarium.</Text>
+        omnium dignissim mediocritatem ut. Possit aliquip deleniti vis ut, ut sea dicat augue adversarium.
+      </Text>
       <SubHeader>Counter</SubHeader>
       Current value <Value>{counterValue}</Value><br />
       <Button onClick={handleButtonClick}>Open Counter</Button>
