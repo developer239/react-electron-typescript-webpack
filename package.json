@@ -1,4 +1,5 @@
 {
+  "main": "main.js",
   "scripts": {
     "start": "NODE_ENV=develop electron -r babel-register .",
     "lint:js": "eslint ./src/renderer && eslint ./src/main",
