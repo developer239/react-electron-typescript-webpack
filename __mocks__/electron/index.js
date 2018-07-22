@@ -5,6 +5,10 @@ module.exports = {
   ipcMain: {
     on: jest.fn(),
   },
+  ipcRenderer: {
+    send: jest.fn(),
+    on: jest.fn(),
+  },
   TouchBar,
   BrowserWindow,
 }
