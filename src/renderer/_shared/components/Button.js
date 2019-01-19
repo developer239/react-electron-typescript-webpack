@@ -20,6 +20,8 @@ const Button = styled.button`
   position: relative;
   margin: 14px 0;
   width: 100%;
+  background-color: #39a1f4;
+  color: white;
   
   &:focus {
     outline: 0;
@@ -27,7 +29,7 @@ const Button = styled.button`
     
   &:hover {
     color: #fff;
-    background-color: #39a1f4;
+    opacity: 0.9;
     outline: 0;
     text-decoration: none;
     border: none;
