@@ -4,19 +4,19 @@
 
 #### Main Dependencies
 
-* [electron](https://github.com/electron/electron) 2.0.5
-* [react](https://github.com/facebook/react) 16.4.1
-* [styled components](https://github.com/styled-components/styled-components) 3.3.3
-* [recompose](https://github.com/acdlite/recompose) 0.27.0
-* [webpack](https://github.com/webpack/webpack) 4.16.1
+* [electron](https://github.com/electron/electron)
+* [react](https://github.com/facebook/react)
+* [styled components](https://github.com/styled-components/styled-components)
+* [recompose](https://github.com/acdlite/recompose)
+* [webpack](https://github.com/webpack/webpack)
 
 #### Code Quality Tools
 
-* [eslint](https://github.com/eslint/eslint) 5.1.0
-* [stylelint](https://github.com/stylelint/stylelint) 9.3.0
-* [jest](https://github.com/facebook/jest) 23.4.1
-* [enzyme](https://github.com/airbnb/enzyme) 3.3.0
-* [sinon](https://github.com/sinonjs/sinon) 6.1.4
+* [eslint](https://github.com/eslint/eslint)
+* [stylelint](https://github.com/stylelint/stylelint)
+* [jest](https://github.com/facebook/jest)
+* [enzyme](https://github.com/airbnb/enzyme)
+* [sinon](https://github.com/sinonjs/sinon)
 * [.editorconfig](http://editorconfig.org/)
 
 ## Installation
