@@ -1,5 +1,4 @@
-/.idea
-/coverage
-/dist
-/node_modules
-/release-builds
+.idea/
+node_modules/
+dist/
+release/

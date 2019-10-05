@@ -1,0 +1,18 @@
+productName: "ReactElectronTypescriptWebpack"
+appId: "developer239.react-electron-typescript-webpack"
+
+directories:
+  output: "release"
+
+files:
+  - "dist/"
+  - "node_modules/"
+  - "package.json"
+
+linux:
+  target:
+    - "deb"
+
+win:
+  target:
+    - "nsis"
