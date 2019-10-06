@@ -22,16 +22,14 @@ module.exports = merge.smart(baseConfig, {
       disableDotRule: false
     },
     before() {
-      if (process.env.START_HOT) {
-        console.log('Starting main process')
-        spawn('npm', ['run', 'start-main-dev'], {
-          shell: true,
-          env: process.env,
-          stdio: 'inherit'
-        })
-          .on('close', code => process.exit(code))
-          .on('error', spawnError => console.error(spawnError))
-      }
+      console.log('Starting main process')
+      spawn('npm', ['run', 'start-main-dev'], {
+        shell: true,
+        env: process.env,
+        stdio: 'inherit'
+      })
+        .on('close', code => process.exit(code))
+        .on('error', spawnError => console.error(spawnError))
     }
   }
 })

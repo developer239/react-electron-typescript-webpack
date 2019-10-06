@@ -10,6 +10,15 @@ module.exports = {
     __dirname: false,
     __filename: false
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      }
+    ]
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json']
   },

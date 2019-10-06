@@ -9,15 +9,6 @@ module.exports = merge.smart(baseConfig, {
   entry: {
     main: path.resolve(__dirname, '..', 'src', 'main', 'main.ts'),
   },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      }
-    ]
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
