@@ -13,9 +13,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "strict": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "baseUrl": "src"
   },
   "include": [
-    "./src"
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

@@ -1,16 +1,18 @@
-import { app, BrowserWindow } from 'electron'
 import * as path from 'path'
 import * as url from 'url'
+import { app, BrowserWindow } from 'electron'
 
 let win: BrowserWindow | null
 
 const installExtensions = async () => {
+  // eslint-disable-next-line
   const installer = require('electron-devtools-installer')
-  const forceDownload = !!process.env.UPGRADE_EXTENSIONS
+
+  const forceDownload = Boolean(process.env.UPGRADE_EXTENSIONS)
   const extensions = ['REACT_DEVELOPER_TOOLS']
 
   return Promise.all(
-    extensions.map(name => installer.default(installer[name], forceDownload)),
+    extensions.map(name => installer.default(installer[name], forceDownload))
   ).catch(console.log)
 }
 
@@ -30,7 +32,7 @@ const createWindow = async () => {
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
         slashes: true,
-      }),
+      })
     )
   }
 
