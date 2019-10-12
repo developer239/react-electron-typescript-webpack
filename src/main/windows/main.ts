@@ -3,7 +3,7 @@ import { generateWindowObject, createWindow } from '../helpers/windowHelper'
 
 const mainWindowReference = generateWindowObject()
 
-app.on('ready', () => {
+const createMainWindow = () =>
   createWindow(mainWindowReference)(
     'main',
     {
@@ -17,10 +17,13 @@ app.on('ready', () => {
       fileName: 'main-window.html',
     }
   )
+
+app.on('ready', () => {
+  createMainWindow()
 })
 
 app.on('activate', () => {
   if (!mainWindowReference.isOpen) {
-    createWindow(mainWindowReference)
+    createMainWindow()
   }
 })
