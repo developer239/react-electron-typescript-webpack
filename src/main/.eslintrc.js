@@ -18,5 +18,10 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     'new-cap': 0,
+    'import/exports-last': 0,
+    'import/no-unused-modules': 0,
+    'no-undefined': 0,
+    'id-length': 0,
+    'no-process-env': 0
   },
 }

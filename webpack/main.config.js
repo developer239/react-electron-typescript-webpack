@@ -7,7 +7,7 @@ const baseConfig = require('./base.config')
 module.exports = merge.smart(baseConfig, {
   target: 'electron-main',
   entry: {
-    main: path.resolve(__dirname, '..', 'src', 'main', 'main.ts'),
+    main: path.resolve(__dirname, '..', 'src', 'main', 'index.ts'),
   },
   plugins: [
     new webpack.DefinePlugin({
