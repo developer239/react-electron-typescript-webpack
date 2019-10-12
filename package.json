@@ -10,11 +10,9 @@
   "scripts": {
     "build-main": "cross-env NODE_ENV=production webpack --config webpack/main.config.js --mode=production",
     "build-renderer:mainWindow": "cross-env NODE_ENV=production webpack --config webpack/renderer/main/prod.config.js",
-    "build-renderer:gameWindow": "cross-env NODE_ENV=production webpack --config webpack/renderer/game/prod.config.js",
-    "build": "npm run build-main && npm run build-renderer:mainWindow && npm run build-renderer:gameWindow",
+    "build": "npm run build-main && npm run build-renderer:mainWindow",
     "start-renderer:dev:mainWindow": "webpack-dev-server --config webpack/renderer/main/dev.config.js",
-    "start-renderer:dev:gameWindow": "webpack-dev-server --config webpack/renderer/game/dev.config.js",
-    "start-renderer:dev": "cross-env npm run start-renderer:dev:mainWindow & cross-env npm run start-renderer:dev:gameWindow",
+    "start-renderer:dev": "cross-env npm run start-renderer:dev:mainWindow",
     "start-main:dev": "nodemon",
     "prestart": "npm run build",
     "start": "electron .",

@@ -1,7 +1,6 @@
 import { app } from 'electron'
 import { installExtensions } from './helpers/extensionsHelper'
 import './windows/main'
-import './windows/game'
 
 app.on('ready', async () => {
   await installExtensions()
