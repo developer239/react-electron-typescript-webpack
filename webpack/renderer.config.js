@@ -1,15 +1,10 @@
-const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./base.config')
 
 module.exports = merge.smart(baseConfig, {
   target: 'electron-renderer',
-  entry: {
-    app: ['@babel/polyfill', path.resolve(__dirname, '..', 'src', 'renderer', 'app.tsx')]
-  },
   module: {
     rules: [
       {
@@ -38,7 +33,6 @@ module.exports = merge.smart(baseConfig, {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     })

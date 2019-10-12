@@ -1,5 +1,4 @@
 const merge = require('webpack-merge')
-const spawn = require('child_process').spawn
 
 const baseConfig = require('./renderer.config')
 
@@ -10,7 +9,6 @@ module.exports = merge.smart(baseConfig, {
     }
   },
   devServer: {
-    port: 2003,
     compress: true,
     noInfo: true,
     stats: 'errors-only',
@@ -19,17 +17,7 @@ module.exports = merge.smart(baseConfig, {
     headers: { 'Access-Control-Allow-Origin': '*' },
     historyApiFallback: {
       verbose: true,
-      disableDotRule: false
+      disableDotRule: false,
     },
-    before() {
-      console.log('Starting main process')
-      spawn('npm', ['run', 'start-main-dev'], {
-        shell: true,
-        env: process.env,
-        stdio: 'inherit'
-      })
-        .on('close', code => process.exit(code))
-        .on('error', spawnError => console.error(spawnError))
-    }
   }
 })

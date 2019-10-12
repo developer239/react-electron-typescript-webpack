@@ -1,5 +1,5 @@
-import * as path from 'path'
-import * as url from 'url'
+import path from 'path'
+import url from 'url'
 import { BrowserWindow, BrowserWindowConstructorOptions } from 'electron'
 
 export interface IWindowReference {
@@ -8,6 +8,8 @@ export interface IWindowReference {
 }
 
 export interface IBrowserWindowConstructorOptionsSpecialOptions {
+  fileName: string
+  port: number
   url?: string
 }
 
@@ -19,7 +21,7 @@ export const generateWindowObject = (): IWindowReference => ({
 export const createWindow = (windowReference: IWindowReference) => (
   name: string,
   options: BrowserWindowConstructorOptions,
-  special?: IBrowserWindowConstructorOptionsSpecialOptions
+  special: IBrowserWindowConstructorOptionsSpecialOptions
 ) => {
   const newWindow = new BrowserWindow({
     ...options,
@@ -30,13 +32,13 @@ export const createWindow = (windowReference: IWindowReference) => (
 
   if (process.env.NODE_ENV !== 'production') {
     process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = '1'
-    newWindow.loadURL(`http://localhost:2003`)
-  } else if (special && special.url) {
+    newWindow.loadURL(`http://localhost:${special.port}`)
+  } else if (special.url) {
     newWindow.loadURL(special.url)
   } else {
     newWindow.loadURL(
       url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, special.fileName),
         protocol: 'file:',
         slashes: true,
       })

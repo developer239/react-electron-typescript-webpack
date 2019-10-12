@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "node_modules"
+  ],
+  "watch": [
+    "src/main"
+  ],
+  "exec": "webpack --config webpack/main.config.js && electron ./dist/main.js",
+  "ext": "ts"
+}

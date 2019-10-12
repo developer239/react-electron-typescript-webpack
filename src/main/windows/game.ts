@@ -1,11 +1,11 @@
 import { app } from 'electron'
 import { generateWindowObject, createWindow } from '../helpers/windowHelper'
 
-const mainWindowReference = generateWindowObject()
+const gameWindowReference = generateWindowObject()
 
 app.on('ready', () => {
-  createWindow(mainWindowReference)(
-    'main',
+  createWindow(gameWindowReference)(
+    'game',
     {
       x: 0,
       y: 0,
@@ -13,14 +13,14 @@ app.on('ready', () => {
       width: 600,
     },
     {
-      port: 2005,
-      fileName: 'main-window.html',
+      port: 2004,
+      fileName: 'game-window.html',
     }
   )
 })
 
 app.on('activate', () => {
-  if (!mainWindowReference.isOpen) {
-    createWindow(mainWindowReference)
+  if (!gameWindowReference.isOpen) {
+    createWindow(gameWindowReference)
   }
 })
